@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public UIManager UIManager;
     public float jumpForce = 10f;
 
     [Header("Audio effects")]
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
     private AudioSource audioSource;
+    private int score = 0;
 
     private void Start()
     {
@@ -45,6 +47,13 @@ public class Player : MonoBehaviour
         if(other.transform.CompareTag("Pipe"))
         {
             audioSource.PlayOneShot(scoreSound);
+            UIManager.DisplayScore(++score);
         }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {       
+        UIManager.DisplayScoreBoard(score);
+        Destroy(obj: this);
+
     }
 }
