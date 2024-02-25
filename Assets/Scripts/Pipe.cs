@@ -16,4 +16,9 @@ public class Pipe : MonoBehaviour
             transform.position = new Vector3(x: 9.66f, y: 0, z: 0);
         }
     }
+
+    private void Start()
+    {
+        
+    }
 }

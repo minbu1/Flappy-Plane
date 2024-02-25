@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {       
         UIManager.DisplayScoreBoard(score);
-        Destroy(obj: this);
+        Destroy(obj:this);
 
     }
 }
