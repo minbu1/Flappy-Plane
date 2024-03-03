@@ -9,16 +9,17 @@ public class Pipe : MonoBehaviour
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
 
-        if(transform.position.x <= -9.69f)
+        if(transform.position.x <= -10f)
         {
-            var y = Random.Range(2.39f, -2.28f);
-            var x = Random.Range(9.2f, 21.15f);
-            transform.position = new Vector3(x, y);
+            Destroy(gameObject);
+
         }
     }
-
+        
     private void Start()
     {
-        
+        var randomY = Random.Range(-2.4f, 1.51f);
+        transform.position = new Vector3(transform.position.x, randomY, transform.position.z);
     }
+
 }
